@@ -1,6 +1,6 @@
 ---
 layout: page
-title: about me
+title: 关于我
 description : intro about me
 group : navigation
 comments : false
