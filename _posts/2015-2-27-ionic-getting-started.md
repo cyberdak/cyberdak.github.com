@@ -5,6 +5,8 @@ tags : [hybird app,cordova,ionic,android,ios]
 category : "ionic"
 ---
 
+> 本文是中文版本的[ionic getting started](http://ionicframework.com/getting-started/).
+
 ### 跟随下面的几个步骤使用ionic在几分钟内构建高质量移动app。你可以访问得到一个更深入的了解 [额外视频课程](https://www.youtube.com/watch?v=C-UwOWB9Io4&feature=youtu.be)(youtube链接，需要翻墙)，视频涵盖其他你想了解的方方面面.
 
 1.安装ionic
@@ -26,10 +28,15 @@ category : "ionic"
 > `ionic start myApp tabs`
 
 ![_config.yml]({{ site.baseurl }}/images/ionic/blank-app.png)
+
 > `ionic start myApp blank`
+
 ![_config.yml]({{ site.baseurl }}/images/ionic/menu-app.png)
+
 > `ionic start myApp sidemenu`
+
 ![_config.yml]({{ site.baseurl }}/images/ionic/tabs-app.png)
+
 > `ionic start myApp tabs`
 
 3.运行它
