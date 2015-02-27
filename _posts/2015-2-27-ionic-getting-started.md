@@ -29,15 +29,15 @@ category : "ionic"
 
 ![_config.yml]({{ site.baseurl }}/images/ionic/blank-app.png) | ![_config.yml]({{ site.baseurl }}/images/ionic/menu-app.png) | ![_config.yml]({{ site.baseurl }}/images/ionic/tabs-app.png)
 ---| --- | ---
-`ionic start myApp blank` |  `ionic start myApp sidemenu` |  `ionic start myApp tabs`
+<center>`ionic start myApp blank`</center> |  <center>`ionic start myApp sidemenu`</center> |  <center>`ionic start myApp tabs`</center>
 
 3.运行它
 
 使用ionic工具来构建，测试和运行你的应用。如果你使用android，请确认将ios替换成android。然后，尝试[ionic view](http://view.ionic.io/)在测试人员和用户之间测试应用。
 
-> `cd myApp`
-> `ionic platform add ios`
-> `ionic build ios`
-> `ionic run ios`
+> `cd myApp`  
+> `ionic platform add ios`  
+> `ionic build ios`  
+> `ionic run ios`  
 
 就是这么简单。
