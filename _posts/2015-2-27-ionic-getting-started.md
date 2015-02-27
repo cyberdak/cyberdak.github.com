@@ -27,17 +27,9 @@ category : "ionic"
 
 > `ionic start myApp tabs`
 
-![_config.yml]({{ site.baseurl }}/images/ionic/blank-app.png)
-
-> `ionic start myApp blank`
-
-![_config.yml]({{ site.baseurl }}/images/ionic/menu-app.png)
-
-> `ionic start myApp sidemenu`
-
-![_config.yml]({{ site.baseurl }}/images/ionic/tabs-app.png)
-
-> `ionic start myApp tabs`
+![_config.yml]({{ site.baseurl }}/images/ionic/blank-app.png) | ![_config.yml]({{ site.baseurl }}/images/ionic/menu-app.png) | ![_config.yml]({{ site.baseurl }}/images/ionic/tabs-app.png)
+---| --- | ---
+`ionic start myApp blank` |  `ionic start myApp sidemenu` |  `ionic start myApp tabs`
 
 3.运行它
 
