@@ -41,3 +41,6 @@ $ nrm ls
 
 
 >`$ nrm use cnpm`
+
+
+ps：切换到taobao npm库，安装某些库依然会安装不上，把dns server从8.8.8.8切换到114.114.114.114不知道会不会改善。
