@@ -2,7 +2,7 @@
 layout : post
 title : 为什么 HotSpot VM 有两个S区
 category : "jvm"
-tags : [jvm,flask]
+tags : [jvm,java,hotspot]
 ---
 
 近来看很多人都在周期性讨论为什么 HotSpot VM 有两个S区，很多人会拿出复制算法的特性来解释，但是基本的复制算法的空间结构是 semi-space ，一个form，一个to。和HotSpot VM的分区完全是风马牛不相及。而且复制算法是一个基础算法，很少有直接在堆分部上使用复制的VM。
