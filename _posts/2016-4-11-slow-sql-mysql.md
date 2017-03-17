@@ -1,7 +1,7 @@
 ---
-layout:post
-title:mysql slow sql优化
-catagory: mysql
+layout : post
+title : mysql slow sql优化
+catagory : mysql
 tags : ['mysql','slow','sql']
 ---
 

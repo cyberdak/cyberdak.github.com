@@ -1,3 +1,11 @@
+---
+layout : post
+title : 中小型企业数据备份容灾方案
+category : "backup"
+tags : [bakcup]
+---
+
+
 之前一直设想的中小型企业数据备份容灾方案。
 
 单机定时备份
