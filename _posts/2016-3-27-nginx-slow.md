@@ -1,10 +1,8 @@
 --- 
-layout: post
-title: 线上服务器访问慢的一次故障诊断
-permalink: new-page.html
-description: Some Description
-date: 2016-03-27 20:06:08 +08:00
-tags: "nginx"
+layout : post
+title : 线上服务器访问慢的一次故障诊断
+date : 2016-03-27 20:06:08 +08:00
+tags : "nginx"
 ---
 
 一次在线上服务器发布更新的时候，发现经过nginx反代之后，访问十分的缓慢，开了一下chrome的调试器，发现访问一个是在访问ico的时候就挂了，然后导致其他的也被阻塞。
