@@ -9,19 +9,19 @@ tags : [jvm,linux,pmap]
 
 目标程序是一个java调用jni做图像计算的程序。
 
-参数设置是 xmx6g xms6g xmn4g 使用cmsgc。
+参数设置是 xmx6g xms6g xmn4g 使用cmsjvm。
 
 用jstat和jmap查看显示堆占用在2g左右。
 
 top结果，pid24907就是我们要查看的进程
 
-![_config.yml]({{ site.baseurl }}/images/gc-memory-debug/top.png) 
+![_config.yml]({{ site.baseurl }}/images/jvm-memory-debug/top.png) 
 
 RES 就是实际占用的内存，占用了 6.9g.
 
 再看看 jstat 和 jps 的数据。
 
-![_config.yml]({{ site.baseurl }}/images/gc-memory-debug/jps&jstat.png) 
+![_config.yml]({{ site.baseurl }}/images/jvm-memory-debug/jps&jstat.png) 
 
 平时会认为jvm占用的内存就是heap+perm，实际上还会有nio direct memory以及jni申请的native memory以及code cache等区域。
 
@@ -34,7 +34,7 @@ java本身并没有提供一个直接查看进程申请direct memory的api，正
 查看结果显示并没有太多的nio direct memory占用。
 
 
-![_config.yml]({{ site.baseurl }}/images/gc-memory-debug/directmemorysize.png)
+![_config.yml]({{ site.baseurl }}/images/jvm-memory-debug/directmemorysize.png)
 
 于是把方向转到jni的怀疑上。
 
@@ -42,4 +42,4 @@ java本身并没有提供一个直接查看进程申请direct memory的api，正
 
 这次终于发现了一个占用5g大小的内存块，从而确定问题在jni上。同时还能看到一些带有 nvidia 标签的内存块
 
-![_config.yml]({{ site.baseurl }}/images/gc-memory-debug/pmap.png)
+![_config.yml]({{ site.baseurl }}/images/jvm-memory-debug/pmap.png)
