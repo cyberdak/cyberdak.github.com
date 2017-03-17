@@ -7,7 +7,7 @@ tags : [jvm,flask]
 
 近来看很多人都在周期性讨论为什么 HotSpot VM 有两个S区，很多人会拿出复制算法的特性来解释，但是基本的复制算法的空间结构是 semi-space ，一个form，一个to。和HotSpot VM的分区完全是风马牛不相及。而且复制算法是一个基础算法，很少有直接在堆分部上使用复制的VM。
 
-HotSpot VM 的堆分布来源于 Ungar 的在1980年发布的论文《Generation Scavenging : A Non-Disruptive High Performance Storage Reclamation Algorithm》.
+HotSpot VM 的堆分布来源于 Ungar 的在1984年发布的论文《Generation Scavenging : A Non-Disruptive High Performance Storage Reclamation Algorithm》.
 
 原始的复制算法是在在两个半空间来复制，这样导致的一个问题就是空间浪费太严重。整个新生代的一半内存被占用却无法使用。另外一点是新生代的to区不许需要那么大，因为大多数都对象在新生代的gc就已经被回收了。所以semi-space的问题就是太浪费空间。所以分成了eden + s0 + s1 的组合。HotSpot VM 默认的配置是8：1 : 1
 
