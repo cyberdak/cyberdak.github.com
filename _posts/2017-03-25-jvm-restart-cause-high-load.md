@@ -101,7 +101,7 @@ public void deletlUser(User user){
 ```
 问题来了，突然来了一次user.isVip() == true 的调用，那么jvm会立马退回到解释执行，然后接着靠收集的数据来做依据做优化。
 
-既然 JIT 每次都需要编译，那么能不能在业务数据变动不大的情况下使用前一次的编译结果来节省编译时间呢。答案是有的，这种编译器叫AOT(ahead-of-time)编译器，事先编译器。它可以将上一次的JIT结果序列化保存到本地，下一次再使用这些结果。目前主流的jvm中，IBM J9 VM和 Azul zing VM都有相应的功能,未来发布的jdk9也会有AOT编译器。IBM J9 VM就叫AOT编译器,J9的AOT会有一些性能问题，使用AOT编译器产生的编译结果性能不如JIT编译器的性能好；而Azul zing的AOT编译器就换了个马甲，改了名字叫 Ready now!，商业产品，主要的竞争力之一（更主要是C4 垃圾回收器，完全并发整理回收器，stw的时间在ms级别），效率不虚jit。 Ready now!的作者也做过一个jit的演讲，[jvm-mechanics-github](https://github.com/dougqh/jvm-mechanics)，相应的视频在youtube和Azul都能找到，这里是演讲的文件，看一下pdf应该可以了解不少。这里引用其中一幅图来说明一下jit的威力和解释执行到底有多慢。
+既然 JIT 每次都需要编译，那么能不能在业务数据变动不大的情况下使用前一次的编译结果来节省编译时间呢。答案是有的，这种编译器叫AOT(ahead-of-time)编译器，事先编译器。它可以将上一次的JIT结果序列化保存到本地，下一次再使用这些结果。目前主流的jvm中，IBM J9 VM和 Azul zing VM都有相应的功能,未来发布的jdk9也会有AOT编译器。IBM J9 VM就叫AOT编译器,J9的AOT会有一些性能问题，使用AOT编译器产生的编译结果性能不如JIT编译器的性能好；而Azul zing的AOT编译器就换了个马甲，改了名字叫 Ready now!，是Zing JVM的主要竞争力之一（更主要是C4 垃圾回收器，完全并发整理回收器，stw的时间在个位数ms级别）。 Ready now!的作者也做过一个jit的演讲，[jvm-mechanics-github](https://github.com/dougqh/jvm-mechanics)，相应的视频在youtube和Azul都能找到，这里是演讲的文件，看一下pdf应该可以了解不少。这里引用其中一幅图来说明一下jit的威力和解释执行到底有多慢。
 
 ![_config.yml]({{ site.baseurl }}/images/jit-power.png) 
 
