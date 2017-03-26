@@ -10,7 +10,7 @@ tags : [jvm,java,hotspot,load,jit]
 
 HotSpot VM 是采用 解释执行 + JIT(just-in-time 即时) 编译器编译`热点`(这就是 HotSpot VM 名字的由来)代码的方式运行。
 
-编译部分是 java 字节码编译成机器本地代码 native code 来运行，这里就和gcc的效果一样。而且基于运行时的采集数据，jit 可以做到比gcc更好的优化效果。除了在 gcc 上做的静态编译，还可以依靠运行时数据来做一些更高级的优化，比如说内联(inline),c还需要程序编码人员直接加上 inline 标识符，而jit编译器可以自动判断哪些函数调用可以内联，基于函数的大小和调用情况，优越感油然而生啊！ 
+编译部分是 java 字节码编译成机器本地代码 native code 来运行，这里就和gcc的效果一样。而且基于运行时的采集数据去做优化，HotSpot VM 得 JIT 可以做得和gcc不相上下，换句话说就是在不同应用场景各有胜负。
 
 在Client Compiler（简称C1,轻量级编译器，fast，效果大概和gcc -o1类似）下运行，运行次数达到1000就会触发编译。
 
