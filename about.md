@@ -20,6 +20,3 @@ Java Dev.
 
 [github](http://github.com/cyberdak)
 
-### Contact me
-
-[21936354@qq.com](mailto:21936354@qq.com)
