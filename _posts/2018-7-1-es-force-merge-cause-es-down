@@ -2,7 +2,7 @@
 layout : post
 title : es merge 功能导致linux宕机原因调查
 category : "es"
-tags : [es,thread,linux]
+tags : [es,merge,iowait]
 ---
 
 es集群在数据急速增长之后加了一批新机器之后，开始频繁出现linux宕机，无法登录的问题，期间还能收到机器old过高报警，但是等事后反应古来，机器都已经无法登录，也就没办法找回现场了。
