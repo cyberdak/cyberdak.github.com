@@ -22,13 +22,13 @@ xfsaild 是文件系统的进程，而这批机器使用的FS确实是XFS，根�
 
 所以这两个点都被排除。
 
-而在机器宕机之前会出现一次load高的情况，查询cpu占用并不高。
+而在机器宕机之前会出现一次load高的情况，查询cpu占用并不高。因为xfs相关进程出现过，那么首先就怀疑到了磁盘上。
 
 使用`iostat -x 1 100`之后发现了真相
 
 ![20180701162826.jpg](https://i.loli.net/2018/07/01/5b3890d55f0e3.jpg)
 
-新机器有12块硬盘，而es的disk-base allocation 策略会将shard分配到占用最低的磁盘上，从而导致节点之间的压力不平衡。
+新机器有12块硬盘，而es的[disk-base allocation](https://www.elastic.co/guide/en/elasticsearch/reference/6.3/disk-allocator.html) 策略会将shard分配到占用最低的磁盘上，从而导致节点之间的压力不平衡。
 
 而在最闲磁盘上分配了大量shard之后，写入都会集中在这个shard上，从而导致`iowait`增大，整体需要排队的资源变大，当io操作等待时间超过120s，linux开始宕机。
 
