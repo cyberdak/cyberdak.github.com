@@ -217,3 +217,8 @@ path:
 ```
 
 之后在`path.data`中注释掉`/data4`，es成功稳定运行，开始在集群中恢复数据。
+
+
+相关链接:
+[error-javalanginternalerror-a-fault-occurred-in-kafka](https://community.hortonworks.com/content/supportkb/199827/error-javalanginternalerror-a-fault-occurred-in-a.html)
+[crash on lucene merge](https://github.com/elastic/elasticsearch/issues/32163)
