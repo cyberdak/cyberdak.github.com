@@ -13,7 +13,7 @@ tags : [jvm,ygc]
 
 正巧之前淘宝的bluedavy也排查过一些ygc越来越慢的问题，那个case是因为XStream的构造函数有bug，导致会不断新建classloader导致的。在排查一番以后，我们的程序中并没有使用XStream。参考case : http://hellojava.info/?p=441  http://hellojava.info/?p=454
 
-StringTable的问题也一样，某些场景不合理使用`String.intern()`也会导致YGC越来越长。case 看 这里.https://mp.weixin.qq.com/s/z2d4w9he88qG4pa8jSYqmg
+StringTable的问题也一样，某些场景不合理使用`String.intern()`也会导致YGC越来越长。使用`jmap -heap $pid`查看过jvm，发现StringTable大小没有明细变化。排除这个问题。case 看 这里.https://mp.weixin.qq.com/s/z2d4w9he88qG4pa8jSYqmg
 
 ygc的问题其实是最难排查的，因为 parNew ygc的日志量太少了，就一行语句，不会打印各个阶段的详情。所以为了能够查看到底是ygc的哪个阶段出了问题，使用jdk8u40以后版本的话，直接切换到G1GC，G1GC的日志十分丰富。
 
