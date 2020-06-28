@@ -1,3 +1,10 @@
+---
+layout : post
+title : elasticsearch在日志场景的hot-warm-cold架构的最佳实践
+category : "es"
+tags : [elasticsearch,es,hot-cold]
+---
+
 elasticsearch 一直以来都支持hot-warm架构，但是如何来设置每个阶段的生命周期，却没有一个指导方案。
 
 本文将结合日志业务给出一个hot-warm-cold架构的最佳实践，基于版本6.8.0，该版本自带index lifecycle management功能，中文名叫“索引生命周期策略
