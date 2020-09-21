@@ -13,3 +13,6 @@ prometheus 目前发展的趋势非常快，基本保持一个月发版一次的
 + 两个新的服务发现: `Eureka` 和 `Hetzner`。 Kubernetes 服务发现现在支持EndpointSlices
 
 + tsdb 命令行工具目前称为promtool的一部分。
+
+
+更多的[changelog](https://github.com/prometheus/prometheus/releases/tag/v2.21.0)
